@@ -1,0 +1,31 @@
+﻿@model xDBCC.Sites.nonSitecore.Models.FormData
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@using (Html.BeginForm("Form", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.FirstName)
+    @Html.TextBoxFor(m => m.FirstName)
+    <br />
+    @Html.LabelFor(m => m.LastName)
+    @Html.TextBoxFor(m => m.LastName)
+    <br />
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+    <br />
+    @Html.LabelFor(m => m.PostalCode)
+    @Html.TextBoxFor(m => m.PostalCode)
+    <br />
+    @Html.LabelFor(m => m.Country)
+    @Html.TextBoxFor(m => m.Country)
+    <br />
+    <input id="submit-button" type="submit" class="myclassname" value="Submit" />
+}
+@section scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+    <script src="//xdbcc.services.contactcapture/scripts/contacts-capture-collect.js"></script>
+}
